@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
+
+"""helper function.
 """
-helper function
-"""
+from typing import Tuple
 
 
-def index_range(page, page_size=None):
-    if page_size is None:
-        page_size = page
-        page = 1
-    start_index = (page - 1) * page_size
-    end_index = start_index + page_size
-    return (start_index, end_index)
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """Retrieve  index range.
+    """
+    page_start = (page - 1) * page_size
+    page_end = page_start + page_size
+    return (page_start, page_end)
