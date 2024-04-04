@@ -3,6 +3,7 @@
 """
 from base_caching import BaseCaching
 
+
 class FIFOCache(BaseCaching):
     """ FIFO cache class
     """
@@ -11,7 +12,7 @@ class FIFOCache(BaseCaching):
         """
         super().__init__()
         self.cache_data = {}
-    
+
     def put(self, key, item):
         """ Add an item in the cache
         """
@@ -21,10 +22,10 @@ class FIFOCache(BaseCaching):
                 self.cache_data.pop(first)
                 print("DISCARD: {}".format(first))
             self.cache_data[key] = item
-        
-        def get(self, key):
-            """ Get an item by key
-            """
-            if key in self.cache_data:
-                return self.cache_data[key]
-            return None
+
+    def get(self, key):
+        """ Get an item by key
+        """
+        if key in self.cache_data:
+            return self.cache_data[key]
+        return None
