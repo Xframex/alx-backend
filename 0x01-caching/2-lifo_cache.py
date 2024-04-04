@@ -23,8 +23,6 @@ class LIFOCache(BaseCaching):
             self.cache_data[key] = item
         
     def get(self, key):
-        """ Get an item by key
+        """Retrieves an item by key.
         """
-        if key in self.cache_data:
-            return self.cache_data[key]
-        return None
+        return self.cache_data.get(key, None)
